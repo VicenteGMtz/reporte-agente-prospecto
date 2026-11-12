@@ -17,7 +17,34 @@ body {
   color: #1e293b;
 }
 
-/* Hoja A4 exacta para portada */
+/* =========================================
+   ENCABEZADO REUTILIZABLE TODAS LAS PÁGINAS
+   ========================================= */
+.doc-header {
+  height: 20mm;
+  padding: 0 16mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.doc-header .logo-gnp-img {
+  height: 28px;
+  object-fit: contain;
+}
+
+.doc-header .fecha-analisis {
+  font-size: 13px;
+  color: #0b326f;
+  font-weight: 500;
+}
+
+/* =========================================
+   PÁGINA 1: PORTADA
+   ========================================= */
 .pagina-portada {
   width: 210mm;
   height: 297mm;
@@ -29,28 +56,6 @@ body {
   background: #ffffff;
 }
 
-/* 1. Header */
-.portada-header {
-  height: 22mm;
-  padding: 0 16mm;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-}
-
-.portada-header .logo-gnp-img {
-  height: 28px;
-  object-fit: contain;
-}
-
-.portada-header .fecha-analisis {
-  font-size: 13px;
-  color: #003366;
-  font-weight: 500;
-}
-
-/* 2. Hero Banner */
 .hero-banner {
   height: 98mm;
   position: relative;
@@ -63,7 +68,6 @@ body {
   padding: 0 16mm;
 }
 
-/* Capa azul semitransparente sobre la imagen de fondo */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -101,7 +105,6 @@ body {
   letter-spacing: 0.2px;
 }
 
-/* 3. Barra de Estatus Financiero */
 .estatus-banner {
   height: 52mm;
   background: linear-gradient(90deg, #104396 0%, #1754b5 50%, #1f62c8 100%);
@@ -145,7 +148,6 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* 4. Bloque Inferior - Datos del Cliente */
 .cliente-seccion {
   flex: 1;
   display: flex;
@@ -177,4 +179,60 @@ body {
   max-height: 195px;
   max-width: 280px;
   object-fit: contain;
+}
+
+/* =========================================
+   PÁGINAS INTERIORES Y RECOMENDACIONES
+   ========================================= */
+.pagina-contenido {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Franja verde de recomendaciones de extremo a extremo */
+.recomendaciones-banner {
+  background-color: #eef7f0;
+  padding: 18px 16mm 22px 16mm;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.recomendaciones-titulo {
+  color: #1e712c;
+  font-size: 16.5px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  break-after: avoid; /* Evita que el título quede solo al final de una hoja */
+}
+
+.recomendaciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Cada ítem es indivisible entre saltos de página */
+.recomendacion-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+}
+
+.recomendacion-texto {
+  color: #1e3a63;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.45;
 }

@@ -13,7 +13,7 @@
   <section class="pagina-portada">
     
     <!-- 1. Header con Logo y Fecha -->
-    <header class="portada-header">
+    <header class="doc-header">
       <img src="{{LOGO_GNP_SRC}}" alt="GNP Seguros" class="logo-gnp-img" />
       <div class="fecha-analisis">Fecha de análisis: {{FECHA_ANALISIS}}</div>
     </header>
@@ -50,6 +50,25 @@
         <img src="{{ILUSTRACION_FOCO_SRC}}" alt="Ilustración Financiera" class="cliente-ilustracion-img" />
       </div>
     </footer>
+
+  </section>
+
+  <!-- PÁGINA 2: RECOMENDACIONES Y PROTECCIÓN -->
+  <section class="pagina-contenido">
+
+    <!-- Header repetido en Página 2 -->
+    <header class="doc-header">
+      <img src="{{LOGO_GNP_SRC}}" alt="GNP Seguros" class="logo-gnp-img" />
+      <div class="fecha-analisis">Fecha de análisis: {{FECHA_ANALISIS}}</div>
+    </header>
+
+    <!-- Sección de Recomendaciones -->
+    <div class="recomendaciones-banner">
+      <h2 class="recomendaciones-titulo">{{TITULO_RECOMENDACIONES}}</h2>
+      <div class="recomendaciones-lista">
+        {{LISTA_RECOMENDACIONES}}
+      </div>
+    </div>
 
   </section>
 
