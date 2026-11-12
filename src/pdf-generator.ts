@@ -1,9 +1,9 @@
 import puppeteer, { Browser, Page } from 'puppeteer';
-import { CheckupReportData } from './types/checkup.types.js';
-import { renderCheckupHtml } from './templates/report.template.js';
+import { CheckupPayloadGNP } from './types/checkup.types.js';
+import { renderCheckupHtml } from './templates/prospecto/report.builder.js';
 
 export class PdfGeneratorService {
-  public static async generateCheckupPdf(data: CheckupReportData): Promise<Uint8Array> {
+  public static async generateCheckupPdf(data: CheckupPayloadGNP): Promise<Uint8Array> {
     const browser: Browser = await puppeteer.launch({
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],

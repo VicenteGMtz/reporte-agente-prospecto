@@ -1,14 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CheckupPayloadGNP } from '../types/checkup.types.js';
+import { CheckupPayloadGNP } from '../../types/checkup.types.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Rutas a src/assets saliendo de templates (..)
-const htmlPath = path.resolve(__dirname, '..', 'assets', 'report.html');
-const cssPath = path.resolve(__dirname, '..', 'assets', 'report.styles.css');
+const htmlPath = path.resolve(__dirname, 'report.html');
+const cssPath = path.resolve(__dirname, 'report.styles.css');
 
 if (!fs.existsSync(htmlPath)) {
   throw new Error(`No se encontró el archivo HTML en: ${htmlPath}`);
