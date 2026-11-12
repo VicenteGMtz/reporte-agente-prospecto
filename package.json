@@ -1,0 +1,23 @@
+{
+  "name": "checkup-pdf-service",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsx node_modules/@google-cloud/functions-framework/build/src/main.js --source=src/index.ts --target=generarPdf --port=8080",
+    "build": "tsc",
+    "gcp-build": "tsc",
+    "start:prod": "functions-framework --target=generarPdf --source=dist"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^5.0.5",
+    "@sparticuz/chromium": "^131.0.1",
+    "puppeteer": "^25.17.0",
+    "puppeteer-core": "^25.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.0"
+  }
+}

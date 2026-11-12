@@ -1,0 +1,180 @@
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color: #1e293b;
+}
+
+/* Hoja A4 exacta para portada */
+.pagina-portada {
+  width: 210mm;
+  height: 297mm;
+  position: relative;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* 1. Header */
+.portada-header {
+  height: 22mm;
+  padding: 0 16mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+
+.portada-header .logo-gnp-img {
+  height: 28px;
+  object-fit: contain;
+}
+
+.portada-header .fecha-analisis {
+  font-size: 13px;
+  color: #003366;
+  font-weight: 500;
+}
+
+/* 2. Hero Banner */
+.hero-banner {
+  height: 98mm;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 16mm;
+}
+
+/* Capa azul semitransparente sobre la imagen de fondo */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(16, 55, 131, 0.88) 0%, rgba(10, 37, 90, 0.82) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title-box {
+  display: inline-block;
+  margin-bottom: 14px;
+  border-bottom: 4px solid #ff6600;
+  padding-bottom: 8px;
+}
+
+.hero-title {
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* 3. Barra de Estatus Financiero */
+.estatus-banner {
+  height: 52mm;
+  background: linear-gradient(90deg, #104396 0%, #1754b5 50%, #1f62c8 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16mm;
+  position: relative;
+}
+
+.estatus-frase {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  max-width: 320px;
+  line-height: 1.35;
+}
+
+.estatus-tacometro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tacometro-img {
+  height: 85px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.estatus-badge {
+  background-color: #f1b434;
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  padding: 6px 28px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. Bloque Inferior - Datos del Cliente */
+.cliente-seccion {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16mm 10mm 16mm;
+  background: #ffffff;
+}
+
+.cliente-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cliente-nombre {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0b326f;
+}
+
+.cliente-datos {
+  font-size: 17px;
+  color: #4b6285;
+  font-weight: 500;
+}
+
+.cliente-ilustracion-img {
+  max-height: 195px;
+  max-width: 280px;
+  object-fit: contain;
+}
