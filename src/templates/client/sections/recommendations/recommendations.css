@@ -1,0 +1,42 @@
+.recomendaciones-banner {
+  background-color: #eef7f0;
+  padding: 18px 16mm 22px 16mm;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.recomendaciones-titulo {
+  color: #1e712c;
+  font-size: 16.5px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  break-after: avoid;
+}
+
+.recomendaciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recomendacion-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+}
+
+.recomendacion-texto {
+  color: #1e3a63;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.45;
+}

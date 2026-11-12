@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkup Financiero</title>
+  <style>
+    /* {{ALL_STYLES}} */
+  </style>
+</head>
+<body>
+
+  <!-- PÁGINA 1 -->
+  {{SECTION_COVER}}
+
+  <!-- PÁGINA 2 EN ADELANTE -->
+  <section class="pagina-contenido">
+    <header class="doc-header">
+      <img src="{{LOGO_GNP_SRC}}" alt="GNP Seguros" class="logo-gnp-img" />
+      <div class="fecha-analisis">Fecha de análisis: {{FECHA_ANALISIS}}</div>
+    </header>
+
+    {{SECTION_RECOMMENDATIONS}}
+    {{SECTION_PROTECTION_INCOME}}
+  </section>
+
+</body>
+</html>

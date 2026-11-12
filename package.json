@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "tsx node_modules/@google-cloud/functions-framework/build/src/main.js --source=src/index.ts --target=generarPdf --port=8080",
-    "build": "tsc",
-    "gcp-build": "tsc",
-    "start:prod": "functions-framework --target=generarPdf --source=dist"
+    "build": "tsc && cp -r src/assets dist/ && rsync -av --include='*/' --include='*.html' --include='*.css' --exclude='*' src/templates/ dist/templates/",
+    "gcp-build": "npm run build"
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^5.0.5",

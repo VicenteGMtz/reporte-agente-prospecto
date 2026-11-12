@@ -1,0 +1,102 @@
+.proteccion-ingresos-wrapper {
+  padding: 6px 16mm 16px 16mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.seccion-col-titulo {
+  color: #0b326f;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.dona-proteccion-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.dona-svg {
+  width: 290px;
+  height: 290px;
+  overflow: visible;
+}
+
+.dona-label-pct {
+  font-size: 13px;
+  font-weight: 800;
+  fill: #0b326f;
+}
+
+.dona-label-name {
+  font-size: 10.5px;
+  font-weight: 600;
+  fill: #334e7b;
+}
+
+.ingresos-cards-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ingreso-card {
+  background-color: #d9e5f8;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.ingreso-card-info {
+  flex: 1;
+}
+
+.ingreso-card-titulo {
+  color: #0b326f;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ingreso-barra-bg {
+  width: 100%;
+  height: 11px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ingreso-barra-fill {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.fill-naranja {
+  background: linear-gradient(90deg, #ffbe76 0%, #f0932b 100%);
+}
+
+.fill-rojo {
+  background: linear-gradient(90deg, #ff7979 0%, #eb4d4b 100%);
+}
+
+.fill-rosa-suave {
+  background: linear-gradient(90deg, #fab1a0 0%, #e17055 100%);
+}
+
+.ingreso-card-icono {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  object-fit: contain;
+}

@@ -1,11 +1,12 @@
-import { HttpFunction } from '@google-cloud/functions-framework';
-import { PdfGeneratorService } from './pdf-generator.js';
+import { http } from '@google-cloud/functions-framework';
+import { TemplateFactory } from './templates/template.factory.js';
+import { PdfGeneratorService } from './services/pdf-generator.service.js';
 import { CheckupPayloadGNP } from './types/checkup.types.js';
 
-export const generarPdf: HttpFunction = async (req, res) => {
+http('generarPdf', async (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
   res.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.set('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   if (req.method === 'OPTIONS') {
     res.status(204).send('');
@@ -13,36 +14,36 @@ export const generarPdf: HttpFunction = async (req, res) => {
   }
 
   if (req.method !== 'POST') {
-    res.status(405).json({ error: 'Método no permitido. Usa POST.' });
+    res.status(405).json({ error: 'Method not allowed. Use POST.' });
     return;
   }
 
   try {
     const payload = req.body as CheckupPayloadGNP;
 
-    // Validación alineada al JSON real
     if (!payload?.cliente?.infoPersonal || !payload?.estatusSaud || !payload?.indDestacados) {
-      res.status(400).json({ error: 'Estructura de datos incompleta: falta cliente.infoPersonal, estatusSaud o indDestacados.' });
+      res.status(400).json({ error: 'Incomplete payload structure.' });
       return;
     }
 
-    const nombreProspecto = payload.cliente.infoPersonal.nombre || payload.taggeo?.nombreProspecto || 'Cliente';
-    console.log(`Generando PDF para: ${nombreProspecto}`);
+    const clientName = payload.cliente.infoPersonal.nombre || 'report';
+    console.log(`Generating PDF for: ${clientName}`);
 
-    const pdfBytes = await PdfGeneratorService.generateCheckupPdf(payload);
+    const html = TemplateFactory.buildHtml(payload);
+    const pdfBytes = await PdfGeneratorService.htmlToPdf(html);
 
     res.set({
       'Content-Type': 'application/pdf',
-      'Content-Disposition': 'inline; filename="checkup_reporte.pdf"',
+      'Content-Disposition': `inline; filename="checkup_${encodeURIComponent(clientName)}.pdf"`,
       'Content-Length': pdfBytes.length.toString(),
     });
 
     res.status(200).end(Buffer.from(pdfBytes));
   } catch (error) {
-    console.error('Error al generar PDF:', error);
+    console.error('PDF generation error:', error);
     res.status(500).json({
-      error: 'Error interno al generar el documento PDF',
+      error: 'Internal error generating PDF',
       details: (error as Error).message,
     });
   }
-};
+});
