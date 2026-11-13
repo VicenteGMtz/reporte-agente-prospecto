@@ -1,0 +1,160 @@
+.local-risks-section {
+  width: 100%;
+  padding: 14px 16mm 22px 16mm;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.local-risks-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.local-risks-title {
+  color: #0b326f;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.local-risks-location {
+  color: #ff6b0b;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 4px auto 12px auto;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.svg-shadow,
+.svg-host {
+  width: 100%;
+}
+
+.svg-shadow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.75;
+  transform: translate(-8px, 10px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.svg-host {
+  position: relative;
+  z-index: 2;
+}
+
+.svg-shadow svg,
+.svg-host svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.risks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.risk-card {
+  border-radius: 12px;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Fondos pastel según el nivel de riesgo */
+.risk-card-bajo {
+  background-color: #f1f7ed;
+}
+
+.risk-card-medio {
+  background-color: #fef6e7;
+}
+
+.risk-card-critico {
+  background-color: #fceeee;
+}
+
+.risk-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.risk-name {
+  color: #0b326f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.risk-desc {
+  color: #0b326f;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.risk-icon-right {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.35;
+}
+
+/* Cierre final y notas legales */
+.report-closing-box {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.closing-cta-pill {
+  background-color: #cde0f9;
+  color: #0b326f;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding: 13px 28px;
+  border-radius: 999px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.closing-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.closing-note-item {
+  color: #0b326f;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 400;
+}
