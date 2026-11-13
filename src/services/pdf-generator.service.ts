@@ -49,7 +49,7 @@ export class PdfGeneratorService {
             #header { padding: 0 !important; margin: 0 !important; }
           </style>
           <div style="width: 100%; height: 20mm; padding: 0 16mm; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; -webkit-print-color-adjust: exact;">
-            <img src="${options.logoSrc}" style="height: 26px; object-fit: contain;" />
+            <img src="${options.logoSrc}" style="height: 32px; width: auto; display: block;" />
             <span style="font-size: 12px; color: #0b326f; font-weight: 500;">Fecha de análisis: ${options.analysisDate}</span>
           </div>
         `,

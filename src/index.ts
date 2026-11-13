@@ -31,6 +31,14 @@ http('generarPdf', async (req, res) => {
 
     // Obtiene HTML y datos del header repetitivo
     const { html, logoSrc, analysisDate } = TemplateFactory.buildHtml(payload);
+
+    // Modo previsualización en navegador para inspeccionar CSS
+    if (req.query.preview === 'html') {
+      res.set('Content-Type', 'text/html; charset=utf-8');
+      res.status(200).send(html);
+      return;
+    }
+    
     const pdfBytes = await PdfGeneratorService.htmlToPdf(html, { logoSrc, analysisDate });
 
     res.set({
