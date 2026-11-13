@@ -1,53 +1,60 @@
-<div class="proteccion-ingresos-wrapper">
-  <div class="col-proteccion">
-    <h3 class="seccion-col-titulo">Nivel de protección Actual</h3>
-    <div class="dona-proteccion-box">
-      {{DONA_PROTECCION_SVG}}
+<section class="protection-income-section">
+  <div class="proteccion-ingresos-wrapper">
+    <div class="col-proteccion">
+      <h3 class="seccion-col-titulo">Nivel de protección Actual</h3>
+      <div class="dona-proteccion-box">
+        {{DONA_PROTECCION_SVG}}
+      </div>
+    </div>
+
+    <div class="col-ingresos">
+      <h3 class="seccion-col-titulo">Ingreso: {{RANGO_INGRESO}}</h3>
+      <div class="ingresos-cards-lista">
+        <div class="ingreso-card">
+          <div class="ingreso-card-info">
+            <div class="ingreso-card-titulo">Gastos: {{GASTOS_PCT}}% del ingreso</div>
+            <div class="ingreso-barra-bg">
+              <div class="ingreso-barra-fill fill-naranja" style="width: {{GASTOS_PCT}}%;"></div>
+            </div>
+          </div>
+          {{ICONO_GASTOS_SVG}}
+        </div>
+
+        <div class="ingreso-card">
+          <div class="ingreso-card-info">
+            <div class="ingreso-card-titulo">Ahorro: {{AHORRO_PCT}}% del ingreso</div>
+            <div class="ingreso-barra-bg">
+              <div class="ingreso-barra-fill fill-rojo" style="width: {{AHORRO_PCT}}%;"></div>
+            </div>
+          </div>
+          {{ICONO_AHORRO_SVG}}
+        </div>
+
+        <div class="ingreso-card">
+          <div class="ingreso-card-info">
+            <div class="ingreso-card-titulo">Tiempo ahorrando: {{TIEMPO_AHORRO_ANIOS}} años</div>
+            <div class="ingreso-barra-bg">
+              <div class="ingreso-barra-fill fill-rosa-suave" style="width: {{TIEMPO_AHORRO_BARRA_PCT}}%;"></div>
+            </div>
+          </div>
+          {{ICONO_TIEMPO_SVG}}
+        </div>
+
+        <div class="ingreso-card">
+          <div class="ingreso-card-info">
+            <div class="ingreso-card-titulo">Esparcimiento: {{ESPARCIMIENTO_PCT}}% del ingreso</div>
+            <div class="ingreso-barra-bg">
+              <div class="ingreso-barra-fill fill-rosa-suave" style="width: {{ESPARCIMIENTO_PCT}}%;"></div>
+            </div>
+          </div>
+          {{ICONO_ESPARCIMIENTO_SVG}}
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="col-ingresos">
-    <h3 class="seccion-col-titulo">Ingreso: {{RANGO_INGRESO}}</h3>
-    <div class="ingresos-cards-lista">
-      <div class="ingreso-card">
-        <div class="ingreso-card-info">
-          <div class="ingreso-card-titulo">Gastos: {{GASTOS_PCT}}% del ingreso</div>
-          <div class="ingreso-barra-bg">
-            <div class="ingreso-barra-fill fill-naranja" style="width: {{GASTOS_PCT}}%;"></div>
-          </div>
-        </div>
-        <img src="{{ICONO_GASTOS_SRC}}" alt="Gastos" class="ingreso-card-icono" />
-      </div>
-
-      <div class="ingreso-card">
-        <div class="ingreso-card-info">
-          <div class="ingreso-card-titulo">Ahorro: {{AHORRO_PCT}}% del ingreso</div>
-          <div class="ingreso-barra-bg">
-            <div class="ingreso-barra-fill fill-rojo" style="width: {{AHORRO_PCT}}%;"></div>
-          </div>
-        </div>
-        <img src="{{ICONO_AHORRO_SRC}}" alt="Ahorro" class="ingreso-card-icono" />
-      </div>
-
-      <div class="ingreso-card">
-        <div class="ingreso-card-info">
-          <div class="ingreso-card-titulo">Tiempo ahorrando: {{TIEMPO_AHORRO_ANIOS}} años</div>
-          <div class="ingreso-barra-bg">
-            <div class="ingreso-barra-fill fill-rosa-suave" style="width: {{TIEMPO_AHORRO_BARRA_PCT}}%;"></div>
-          </div>
-        </div>
-        <img src="{{ICONO_TIEMPO_SRC}}" alt="Tiempo ahorrando" class="ingreso-card-icono" />
-      </div>
-
-      <div class="ingreso-card">
-        <div class="ingreso-card-info">
-          <div class="ingreso-card-titulo">Esparcimiento: {{ESPARCIMIENTO_PCT}}% del ingreso</div>
-          <div class="ingreso-barra-bg">
-            <div class="ingreso-barra-fill fill-rosa-suave" style="width: {{ESPARCIMIENTO_PCT}}%;"></div>
-          </div>
-        </div>
-        <img src="{{ICONO_ESPARCIMIENTO_SRC}}" alt="Esparcimiento" class="ingreso-card-icono" />
-      </div>
-    </div>
-  </div>
-</div>
+  <!-- Nota aclaratoria a ancho completo debajo de ambas columnas -->
+  <p class="protection-disclaimer">
+    La gráfica de nivel de protección no incluye la suma asegurada de las pólizas del cliente.
+  </p>
+</section>

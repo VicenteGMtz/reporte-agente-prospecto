@@ -1,11 +1,26 @@
-.proteccion-ingresos-wrapper {
-  padding: 6px 16mm 16px 16mm;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
+.protection-income-section {
+  width: 100%;
+  padding: 6px 16mm 14px 16mm;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   break-inside: avoid;
   page-break-inside: avoid;
+}
+
+.proteccion-ingresos-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.col-proteccion,
+.col-ingresos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .seccion-col-titulo {
@@ -15,18 +30,19 @@
   margin-bottom: 18px;
 }
 
+/* Columna Izquierda: Gráfica Radial SVG */
 .dona-proteccion-box {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 
 .dona-svg {
-  width: 290px;
-  height: 290px;
+  width: 285px;
+  height: 285px;
   overflow: visible;
 }
 
@@ -42,6 +58,7 @@
   fill: #334e7b;
 }
 
+/* Columna Derecha: Tarjetas de Ingresos y Gastos */
 .ingresos-cards-lista {
   display: flex;
   flex-direction: column;
@@ -55,11 +72,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .ingreso-card-info {
   flex: 1;
+  min-width: 0;
 }
 
 .ingreso-card-titulo {
@@ -67,6 +85,7 @@
   font-size: 12px;
   font-weight: 700;
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .ingreso-barra-bg {
@@ -98,5 +117,14 @@
   width: 36px;
   height: 36px;
   min-width: 36px;
-  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.protection-disclaimer {
+  width: 100%;
+  color: #0b326f;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 4px;
 }

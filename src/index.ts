@@ -29,8 +29,9 @@ http('generarPdf', async (req, res) => {
     const clientName = payload.cliente.infoPersonal.nombre || 'report';
     console.log(`Generating PDF for: ${clientName}`);
 
-    const html = TemplateFactory.buildHtml(payload);
-    const pdfBytes = await PdfGeneratorService.htmlToPdf(html);
+    // Obtiene HTML y datos del header repetitivo
+    const { html, logoSrc, analysisDate } = TemplateFactory.buildHtml(payload);
+    const pdfBytes = await PdfGeneratorService.htmlToPdf(html, { logoSrc, analysisDate });
 
     res.set({
       'Content-Type': 'application/pdf',

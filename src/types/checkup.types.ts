@@ -200,17 +200,13 @@ export interface IndicadorGraficoContenedor {
 // ==========================================
 // 8. Seguros y Pólizas
 // ==========================================
-export interface SeguroEmpresa {
-  valorRespuesta: string;
-  seleccionado: boolean;
-}
-
-export interface SeguroPersonal {
+export interface SeguroContratadoItem {
   valorRespuesta: string;
   numeroPolizas?: string | number;
   sumaAsegurada?: string | number;
   seleccionado: boolean;
 }
+
 
 // ==========================================
 // 9. Riesgos Locales y Vehicular/Hogar
@@ -264,8 +260,8 @@ export interface CheckupPayloadGNP {
   despedida?: DespedidaReporte;
   descargarReporte?: boolean;
   indGraficos: IndicadorGraficoContenedor[];
-  segurosContratadosPorTuEmpresa: SeguroEmpresa[];
-  segurosContratadosPorTuCuenta: SeguroPersonal[];
+  segurosContratadosPorTuEmpresa: SeguroContratadoItem[];
+  segurosContratadosPorTuCuenta: SeguroContratadoItem[];
   tipoRiesgo: TipoRiesgoLocalidad[];
   riesgosRoboDanios?: RiesgosRoboDanios;
   prospectoCuestionarioDto?: ProspectoCuestionarioDto;

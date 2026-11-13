@@ -1,5 +1,9 @@
 @page {
   size: A4 portrait;
+  margin: 22mm 0 10mm 0;
+}
+
+@page :first {
   margin: 0;
 }
 
@@ -15,6 +19,13 @@ body {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
   color: #1e293b;
+}
+
+.pagina-contenido {
+  width: 210mm;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
 .doc-header {

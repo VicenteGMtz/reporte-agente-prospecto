@@ -1,9 +1,37 @@
-import { CheckupPayloadGNP } from "../../../../types/checkup.types.js";
-import { TemplateLoader } from "../../../../utils/template-loader.util.js";
+import { CheckupPayloadGNP } from '../../../../types/checkup.types.js';
+import { TemplateLoader } from '../../../../utils/template-loader.util.js';
 
 const BASE_PATH = 'templates/client/sections/protection-income';
 const htmlTemplate = TemplateLoader.readFile(`${BASE_PATH}/protection-income.html`);
 const cssStyles = TemplateLoader.readFile(`${BASE_PATH}/protection-income.css`);
+
+const ICON_EXPENSES_SVG = `
+<svg class="ingreso-card-icono" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="6" y="14" width="26" height="18" rx="4" fill="#cbd5e1"/>
+  <path d="M10 14L20 7L27 14H10Z" fill="#0066cc"/>
+  <path d="M31 7V15M31 7L28 10M31 7L34 10" stroke="#0066cc" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="23" y="20" width="11" height="6" rx="3" fill="#94a3b8"/>
+  <circle cx="26" cy="23" r="1.5" fill="#ffffff"/>
+</svg>`;
+
+const ICON_SAVINGS_SVG = `
+<svg class="ingreso-card-icono" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M17 11L15 7H25L23 11H17Z" fill="#0b326f"/>
+  <path d="M13 14C13 12 16 11 20 11C24 11 27 12 27 14C30 17 31 23 28 26C25 28 15 28 12 26C9 23 10 17 13 14Z" fill="#0066cc"/>
+  <text x="20" y="23" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">$</text>
+  <rect x="7" y="25" width="4" height="9" rx="1" fill="#0066cc"/>
+  <path d="M11 28H23C25 28 27 29 29 27L33 25C34 25 34 27 33 28L27 32C25 33 22 33 19 33H11V28Z" fill="#cbd5e1"/>
+</svg>`;
+
+const ICON_CLOCK_COIN_SVG = `
+<svg class="ingreso-card-icono" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="15" cy="14" r="7" fill="#e2e8f0" stroke="#0066cc" stroke-width="2"/>
+  <path d="M15 10V14L17.5 16" stroke="#0066cc" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="27" cy="14" r="7" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+  <text x="27" y="18" text-anchor="middle" fill="#0066cc" font-size="10" font-weight="bold">$</text>
+  <rect x="7" y="25" width="4" height="9" rx="1" fill="#0066cc"/>
+  <path d="M11 28H23C25 28 27 29 29 27L33 25C34 25 34 27 33 28L27 32C25 33 22 33 19 33H11V28Z" fill="#cbd5e1"/>
+</svg>`;
 
 function getTrafficLightColor(value: number): string {
   if (value >= 75) return '#6ab04c';
@@ -81,11 +109,6 @@ export function buildProtectionIncomeSection(data: CheckupPayloadGNP): { html: s
     ? Math.min(Math.round(timeIndicator.indicador * 100), 100)
     : Math.min((parseInt(savingYears, 10) || 0) * 10, 100);
 
-  const expensesIcon = TemplateLoader.getImageBase64('icono-gastos.png');
-  const savingsIcon = TemplateLoader.getImageBase64('icono-ahorro.png');
-  const timeIcon = TemplateLoader.getImageBase64('icono-tiempo.png');
-  const leisureIcon = TemplateLoader.getImageBase64('icono-esparcimiento.png');
-
   const donutSvg = buildProtectionDonutSvg(data.nivelProteccion?.indicadoresProteccion || []);
 
   const html = htmlTemplate
@@ -96,10 +119,10 @@ export function buildProtectionIncomeSection(data: CheckupPayloadGNP): { html: s
     .replace('{{TIEMPO_AHORRO_ANIOS}}', savingYears)
     .replace('{{TIEMPO_AHORRO_BARRA_PCT}}', String(savingBarPct))
     .replaceAll('{{ESPARCIMIENTO_PCT}}', String(leisurePct))
-    .replace('{{ICONO_GASTOS_SRC}}', expensesIcon)
-    .replace('{{ICONO_AHORRO_SRC}}', savingsIcon)
-    .replace('{{ICONO_TIEMPO_SRC}}', timeIcon)
-    .replace('{{ICONO_ESPARCIMIENTO_SRC}}', leisureIcon);
+    .replace('{{ICONO_GASTOS_SVG}}', ICON_EXPENSES_SVG)
+    .replace('{{ICONO_AHORRO_SVG}}', ICON_SAVINGS_SVG)
+    .replace('{{ICONO_TIEMPO_SVG}}', ICON_CLOCK_COIN_SVG)
+    .replace('{{ICONO_ESPARCIMIENTO_SVG}}', ICON_CLOCK_COIN_SVG);
 
   return { html, css: cssStyles };
 }
