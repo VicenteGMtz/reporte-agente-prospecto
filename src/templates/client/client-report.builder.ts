@@ -4,6 +4,8 @@ import { buildCoverSection } from './sections/cover/cover.section.js';
 import { buildRecommendationsSection } from './sections/recommendations/recommendations.section.js';
 import { buildProtectionIncomeSection } from './sections/protection-income/protection-income.section.js';
 import { buildContractedInsuranceSection } from './sections/contracted-insurance/contracted-insurance.section.js';
+import { buildSimilarProfileSection } from './sections/similar-profile/similar-profile.section.js';
+import { buildSociodemographicStatsSection } from './sections/sociodemographic-stats/sociodemographic-stats.section.js';
 
 const layoutHtml = TemplateLoader.readFile('templates/client/layout.html');
 const globalCss = TemplateLoader.readFile('assets/styles/global.css');
@@ -49,6 +51,9 @@ export function buildClientReportHtml(data: CheckupPayloadGNP): BuiltReportResul
   const recommendations = buildRecommendationsSection(data);
   const protectionIncome = buildProtectionIncomeSection(data);
   const contractedInsurance = buildContractedInsuranceSection(data);
+  const similarProfile = buildSimilarProfileSection(data);
+  const sociodemographicStats = buildSociodemographicStatsSection(data);
+  
 
   const combinedCss = [
     globalCss,
@@ -56,6 +61,8 @@ export function buildClientReportHtml(data: CheckupPayloadGNP): BuiltReportResul
     recommendations.css,
     protectionIncome.css,
     contractedInsurance.css,
+    similarProfile.css,
+    sociodemographicStats.css,
   ].join('\n');
 
   const html = layoutHtml
@@ -65,7 +72,9 @@ export function buildClientReportHtml(data: CheckupPayloadGNP): BuiltReportResul
     .replace('{{SECTION_COVER}}', cover.html)
     .replace('{{SECTION_RECOMMENDATIONS}}', recommendations.html)
     .replace('{{SECTION_PROTECTION_INCOME}}', protectionIncome.html)
-    .replace('{{SECTION_CONTRACTED_INSURANCE}}', contractedInsurance.html);
+    .replace('{{SECTION_CONTRACTED_INSURANCE}}', contractedInsurance.html)
+    .replace('{{SECTION_SIMILAR_PROFILE}}', similarProfile.html)
+    .replace('{{SECTION_SOCIODEMOGRAPHIC_STATS}}', sociodemographicStats.html);
 
   return {
     html,
