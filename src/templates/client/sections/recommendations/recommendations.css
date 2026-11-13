@@ -6,11 +6,13 @@
 }
 
 .recomendaciones-titulo {
-  color: #1e712c;
-  font-size: 16.5px;
-  font-weight: 700;
-  margin-bottom: 14px;
+  color: #1e712c; /* este color no existe en theme gnp*/
   break-after: avoid;
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
 }
 
 .recomendaciones-lista {
@@ -35,8 +37,10 @@
 }
 
 .recomendacion-texto {
-  color: #1e3a63;
-  font-size: 13.5px;
-  font-weight: 600;
-  line-height: 1.45;
+  color: var( --color-primary-azul-gnp);
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
 }

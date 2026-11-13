@@ -8,8 +8,10 @@ import { buildSimilarProfileSection } from './sections/similar-profile/similar-p
 import { buildSociodemographicStatsSection } from './sections/sociodemographic-stats/sociodemographic-stats.section.js';
 import { buildLocalRisksSection } from './sections/local-risks/local-risks.section.js';
 import { buildMexicoMapHtml } from '../../utils/mexico-map.util.js';
+import { getRobotoFontFacesCss } from '../../utils/fonts.util.js';
 
 const layoutHtml = TemplateLoader.readFile('templates/client/layout.html');
+const themeCss = TemplateLoader.readFile('assets/styles/theme.css');
 const globalCss = TemplateLoader.readFile('assets/styles/global.css');
 
 // Logo GNP vectorial garantizado (funciona siempre en Puppeteer headerTemplate y portada)
@@ -58,6 +60,8 @@ export function buildClientReportHtml(data: CheckupPayloadGNP): BuiltReportResul
   const localRisks = buildLocalRisksSection(data);
 
   const combinedCss = [
+    getRobotoFontFacesCss(),
+    themeCss,
     globalCss,
     cover.css,
     recommendations.css,

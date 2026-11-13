@@ -9,6 +9,7 @@
     "gcp-build": "npm run build"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.3.0",
     "@google-cloud/functions-framework": "^5.0.5",
     "@sparticuz/chromium": "^131.0.1",
     "puppeteer": "^25.17.0",

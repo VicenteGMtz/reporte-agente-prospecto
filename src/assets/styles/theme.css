@@ -1,0 +1,118 @@
+:root {
+
+    /* Tipografía */
+  --font-family-base: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+  
+  /* Primary */
+  --color-primary-azul-gnp: #002e71; /* azul gnp */
+  --color-primary-naranja-gnp: #ff6b0b; /* naranja gnp */
+  --color-primary-humo: #f6f9fd; /* humo */
+  --color-primary-marfil: #fff8e2; /* marfil */
+  --color-primary-blanco: #ffffff; /* blanco */
+  --color-primary-negro: #000000; /* negro */
+
+  /* Inks Naranja */
+  --color-inks-naranja-gnp: #ff6b0b; /* naranja gnp */
+  --color-inks-naranja-gnp-800: #ff8d0a; /* naranja gnp 800 */
+  --color-inks-naranja-gnp-700: #ff9e0a; /* naranja gnp 700 */
+  --color-inks-naranja-gnp-600: #ffb109; /* naranja gnp 600 */
+  --color-inks-naranja-gnp-500: #ffbf0e; /* naranja gnp 500 */
+  --color-inks-naranja-gnp-400: #ffc82a; /* naranja gnp 400 */
+  --color-inks-naranja-gnp-300: #ffd350; /* naranja gnp 300 */
+  --color-inks-naranja-gnp-200: #ffdf82; /* naranja gnp 200 */
+  --color-inks-naranja-gnp-100: #ffebb3; /* naranja gnp 100 */
+  --color-inks-marfil: #fff8e2; /* marfil */
+
+  /* Inks Azul */
+  --color-inks-azul-gnp-900: #0c2040; /* azul gnp 900 */
+  --color-inks-azul-gnp-800: #112a55; /* azul gnp 800 */
+  --color-inks-azul-gnp: #002e71; /* azul gnp */
+  --color-inks-azul-gnp-600: #2155ab; /* azul gnp 600 */
+  --color-inks-azul-gnp-500: #2a6ad5; /* azul gnp 500 */
+  --color-inks-azul-gnp-400: #5588de; /* azul gnp 400 */
+  --color-inks-azul-gnp-300: #7fa5e6; /* azul gnp 300 */
+  --color-inks-azul-gnp-200: #aac3ee; /* azul gnp 200 */
+  --color-inks-azul-gnp-100: #d4e1f7; /* azul gnp 100 */
+  --color-inks-azul-gnp-50: #eaf0fb; /* azul gnp 50 */
+
+  /* Neutral */
+  --color-neutral-darkest: #8691a2; /* neutral darkest */
+  --color-neutral-darker: #acb4c0; /* neutral darker */
+  --color-neutral-dark: #bfc5cf; /* neutral dark */
+  --color-neutral-medium: #d1d6de; /* neutral medium */
+  --color-neutral-light: #e4e8ed; /* neutral light */
+  --color-neutral-humo: #f6f9fd; /* neutral humo */
+
+  /* Complementary */
+  --color-complementary-oceano-dark: #1b48a9; /* oceano dark */
+  --color-complementary-oceano-medium: #3167ba; /* oceano medium */
+  --color-complementary-oceano-light: #c9dbf0; /* oceano light */
+  --color-complementary-orquidea-dark: #4f44a4; /* orquidea dark */
+  --color-complementary-orquidea-medium: #6f63c9; /* orquidea medium */
+  --color-complementary-orquidea-light: #e9e6fd; /* orquidea light */
+  --color-complementary-aquamarina-dark: #429488; /* aquamarina dark */
+  --color-complementary-aquamarina-medium: #54bcad; /* aquamarina medium */
+  --color-complementary-aquamarina-light: #ccf6f0; /* aquamarina light */
+
+  /* Backgrounds */
+  --color-background-darkest: #0c2040; /* fondo darkest azul GNP 900 */
+  --color-background-darker: #33486c; /* fondo darker */
+  --color-background-dark: #567099; /* fondo dark */
+  --color-background-medium: #9daec8; /* fondo medium */
+  --color-background-light: #ced8e8; /* fondo light */
+  --color-background-lighter: #e8eef8; /* fondo lighter */
+  --color-background-lightest: #f6f9fd; /* fondo lightest humo */
+  --color-background-white: #ffffff; /* fondo white blanco */
+  --color-background-disabled-dark: #d1d6de; /* fondo disabled dark neutral medium */
+  --color-background-disabled-light: #f6f9fd; /* fondo disabled light humo */
+  --color-background-disabled-reverse: #002e71; /* fondo inverso azul gnp */
+
+  /* Semantic States */
+  --color-background-validation-darker: #44956c; /* validation darker */
+  --color-background-validation-dark: #5bc790; /* validation dark */
+  --color-background-validation-medium: #bce6ce; /* validation medium */
+  --color-background-validation-light: #e3f5eb; /* validation light */
+  --color-background-error-darker: #9a4443; /* error darker */
+  --color-background-error-dark: #cd5a59; /* error dark */
+  --color-background-error-medium: #d89a9c; /* error medium */
+  --color-background-error-light: #f8ebed; /* error light */
+  --color-background-warning-darker: #b18931; /* warning darker */
+  --color-background-warning-dark: #ecb741; /* warning dark */
+  --color-background-warning-medium: #f9eea0; /* warning medium */
+  --color-background-warning-light: #fbf5c6; /* warning light */
+  --color-background-info-darker: #567ead; /* info darker */
+  --color-background-info-dark: #73a8e7; /* info dark */
+  --color-background-info-medium: #a3cbf3; /* info medium */
+  --color-background-info-light: #e7f2fc; /* info light */
+
+  /* Typography & Text */
+  --color-background-text-headers: #002e71; /* headers azul gnp */
+  --color-background-text-links: #ff6b0b; /* links naranja gnp */
+  --color-background-text-body: #0c2040; /* body azul gnp 900 */
+  --color-background-text-text-system-1: #33486c; /* background dark */
+  --color-background-text-text-system-2: #0c2040; /* neutral darkest */
+  --color-background-text-text-inactive: #acb4c0; /* neutral darker */
+  --color-background-text-body-reverse: #ffffff; /* body reverse white */
+  --color-background-text-text-validation: #44956c; /* text validation darker */
+  --color-background-text-text-information: #567ead; /* text information darker */
+  --color-background-text-text-alert: #b18931; /* text alert darker */
+  --color-background-text-text-error: #9a4443; /* text error */
+
+  /* Illustrations */
+  --color-background-ilustration-primary-beige-dark: #eab281; /* beige dark */
+  --color-background-ilustration-primary-beige-medium: #f9dcb1; /* beige medium */
+  --color-background-ilustration-primary-beige-light: #fef0d5; /* beige light */
+  --color-background-ilustration-primary-menta-dark: #69a1ac; /* menta dark */
+  --color-background-ilustration-primary-menta-medium: #89c5cc; /* menta medium */
+  --color-background-ilustration-primary-menta-light: #d6eaed; /* menta light */
+  --color-background-ilustration-primary-gray-dark-dark: #b0b9c0; /* gray dark */
+  --color-background-ilustration-primary-gray-dark-gray-medium: #c5cfd6; /* gray medium */
+  --color-background-ilustration-primary-gray-dark-gray-light: #dde3e9; /* gray light */
+  --color-background-ilustration-secondary-azul-dark: #002e71; /* azul gnp */
+  --color-background-ilustration-secondary-azul-medium: #1a4894; /* azul medium */
+  --color-background-ilustration-secondary-azul-light: #2c5aa9; /* azul light */
+  --color-background-ilustration-secondary-naranja-dark: #ff6b0b; /* naranja gnp */
+  --color-background-ilustration-secondary-naranja-medium: #ff9e0a; /* naranja medium */
+  --color-background-ilustration-secondary-naranja-light: #ffbf0e; /* naranja light */
+}
